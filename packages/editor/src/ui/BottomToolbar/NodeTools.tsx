@@ -37,6 +37,11 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
           <Grid item={true}>
             <Typography variant="subtitle1">{t(title)}</Typography>
           </Grid>
+
+          <Grid item={true} style={{ marginLeft: 'auto' }}>
+            <BottomToolbarTools nodeId={nodeId} />
+          </Grid>
+
           {actionsLeft &&
             React.Children.map(actionsLeft, (action, index) => (
               <Grid item={true} key={index}>
@@ -49,9 +54,6 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
             </Grid>
           ) : null}
 
-          <Grid item={true} style={{ marginLeft: 'auto' }}>
-            <BottomToolbarTools nodeId={nodeId} />
-          </Grid>
         </Grid>
       </div>
     );

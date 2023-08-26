@@ -22,29 +22,27 @@ export const BottomToolbar: FC<PropsWithChildren<BottomToolbarProps>> =
       style,
       children,
     }) => {
+
       const [scale, setScale] = React.useState(1);
 
       return (
         <BottomToolbarDrawer
           className={className}
-          open={open}
+          open={pluginControls?open:false}
           anchor={anchor}
           scale={scale}
           style={style}
         >
-          {children}
-          {pluginControls}
           <BottomToolbarMainBar
             nodeId={nodeId}
             actionsLeft={[
-              <ScaleButton
-                key="scalebutton"
-                scale={scale}
-                setScale={setScale}
-              />,
               ...React.Children.toArray(actionsLeft),
             ]}
           />
+          {pluginControls}
+          {children}
+
+
         </BottomToolbarDrawer>
       );
     }

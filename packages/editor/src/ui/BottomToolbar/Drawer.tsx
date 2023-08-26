@@ -46,14 +46,10 @@ export const BottomToolbarDrawer: FC<
         variant="persistent"
         className={className}
         open={open}
-        anchor={anchor}
+        anchor={"left"}
         PaperProps={{
           style: {
-            zIndex: 10,
-            backgroundColor: 'transparent',
-            border: 'none',
-            overflow: 'visible',
-            pointerEvents: 'none',
+            maxWidth: "30vw",
           },
         }}
       >
@@ -73,8 +69,8 @@ export const BottomToolbarDrawer: FC<
               : {
                   marginLeft: 'auto',
                   marginRight: 'auto',
-                  minWidth: '50vw',
-                  maxWidth: 'min(1280px, calc(100vw - 250px))',
+                  //minWidth: '50vw',
+                  //maxWidth: 'min(1280px, calc(100vw - 250px))',
                 }),
             boxShadow: '0px 1px 8px -1px rgba(0,0,0,0.4)',
             position: 'relative',
