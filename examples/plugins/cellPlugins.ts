@@ -34,7 +34,7 @@ import codeSnippet from './codeSnippet';
 import contactForm from './contactForm';
 
 const fakeImageUploadService: (url: string) => ImageUploadType =
-  (defaultUrl) => (file, reportProgress) => {
+  (defaultUrl) => (file:any, reportProgress:any) => {
     return new Promise((resolve, reject) => {
       let counter = 0;
       const interval = setInterval(() => {

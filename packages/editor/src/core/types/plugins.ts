@@ -213,6 +213,8 @@ export type CellPlugin<
    */
   icon?: React.ReactNode;
 
+  iconColor?: string;
+
   hideInMenu?: boolean;
 
   isInlineable?: boolean;

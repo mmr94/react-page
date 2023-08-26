@@ -18,6 +18,7 @@ const contactForm: CellPlugin<{
   id: 'contact-form',
   title: 'Contact form',
   description: 'A simple, configurable contactform',
+  iconColor:"red",
   version: 1,
   controls: {
     type: 'autoform',

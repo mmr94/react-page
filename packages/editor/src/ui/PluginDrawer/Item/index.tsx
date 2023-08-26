@@ -21,9 +21,15 @@ type ItemProps = {
 
 const Item: React.FC<ItemProps> = ({ plugin, insert }) => {
   const title = plugin.title ?? plugin.text;
+  var avatarStyle:React.CSSProperties={marginRight: 16,}
+
   const { t } = useUiTranslator();
   if (!plugin.icon && !title) {
     return null;
+  }
+
+  if(plugin.iconColor){
+    avatarStyle.backgroundColor=plugin.iconColor
   }
 
   const referenceNodeId = useDisplayModeReferenceNodeId();
@@ -32,6 +38,8 @@ const Item: React.FC<ItemProps> = ({ plugin, insert }) => {
     () => insertNew(insert),
     [insertNew, referenceNodeId, insert]
   );
+
+
 
   return (
     <Draggable insert={insert}>
@@ -44,9 +52,7 @@ const Item: React.FC<ItemProps> = ({ plugin, insert }) => {
       >
         <Avatar
           children={plugin.icon || title?.[0]}
-          style={{
-            marginRight: 16,
-          }}
+          style={avatarStyle}
         />
         <ListItemText primary={t(title)} secondary={t(plugin.description)} />
       </ListItem>
