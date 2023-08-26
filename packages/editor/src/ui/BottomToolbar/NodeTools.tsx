@@ -21,7 +21,8 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
     const showMoveButtons = useOption('showMoveButtonsInBottomToolbar');
     return (
       <div>
-        <Grid container={true} direction="row" alignItems="center">
+        <Grid container={true} direction="row" alignItems="center" justifyContent="space-between">
+
           {icon || title ? (
             <Grid item={true}>
               <Avatar
@@ -34,27 +35,27 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
               />
             </Grid>
           ) : null}
-          <Grid item={true}>
-            <Typography variant="subtitle1">{t(title)}</Typography>
-          </Grid>
+
 
           <Grid item={true} style={{ marginLeft: 'auto' }}>
             <BottomToolbarTools nodeId={nodeId} />
           </Grid>
 
-          {actionsLeft &&
-            React.Children.map(actionsLeft, (action, index) => (
-              <Grid item={true} key={index}>
-                {action}
-              </Grid>
-            ))}
-          {showMoveButtons ? (
+        </Grid>
+        {showMoveButtons ? (
+          <Grid container={true} direction="row" alignItems="center" justifyContent="space-between">
+
+            <Grid item={true}>
+              <Typography variant="subtitle1">{t("Déplacer le plugin")}</Typography>
+            </Grid>
+
+
             <Grid item={true} style={{ marginLeft: 'auto' }}>
               <MoveActions nodeId={nodeId} />
             </Grid>
-          ) : null}
 
-        </Grid>
+          </Grid>
+        ) : null}
       </div>
     );
   });

@@ -53,11 +53,11 @@ export function AutoformControls<T extends DataTType>(props: Props<T>) {
       onSubmit={onChange}
     >
       {Content ? (
-        <Content {...props} columnCount={columnCount} />
+        <Content {...props} columnCount={1} />
       ) : (
         <div
           style={{
-            columnCount: isSmall ? 1 : columnCount,
+            columnCount: isSmall ? 1 : 1,
             columnRule: '1px solid #E0E0E0',
             columnGap: 48,
           }}

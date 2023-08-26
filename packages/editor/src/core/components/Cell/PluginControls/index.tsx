@@ -20,26 +20,25 @@ const ControlsList: React.FC<{
     <div
       style={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
+        alignItems:"flex-end",
+        width:"100%",
       }}
     >
       <Tabs
         sx={{
-          marginTop: '-12px',
-          marginBottom: '-12px',
-          marginLeft: '-24px',
-          alignItems: 'flex-start',
+          marginBottom:5,
           backgroundColor: (theme) => theme.palette.background.default,
         }}
         value={tab}
         onChange={(e, v) => setTab(v)}
-        orientation="vertical"
+        orientation="horizontal"
         variant="scrollable"
       >
         {controls.map((t, index) => (
           <Tab
             sx={{
-              alignItems: 'flex-start',
+              justifyContent: 'flex-end',
             }}
             label={t.title}
             key={index}
@@ -51,8 +50,9 @@ const ControlsList: React.FC<{
         <div
           style={{
             flex: 1,
-            marginLeft: 24,
             display: 'flex',
+            width:"100%",
+            alignItems:"center"
           }}
         >
           <Controls controls={activeControls} componentProps={componentProps} />
@@ -77,7 +77,7 @@ const Controls: React.FC<{
   } else if (controls?.type === 'autoform') {
     pluginControls = <AutoformControls {...componentProps} {...controls} />;
   }
-  return <div style={{ overflow: 'auto', flex: 1 }}>{pluginControls}</div>;
+  return <div style={{ overflow: 'auto', flex: 1,width:"100%",alignItems:"center" }}>{pluginControls}</div>;
 });
 
 const PluginControls: React.FC<{
@@ -87,10 +87,10 @@ const PluginControls: React.FC<{
   return (
     <div
       style={{
-        maxHeight: '50vh',
+        //maxHeight: '50vh',
         // if it has tabs, stretch to avoid jumping tabs
-        width: Array.isArray(controls) ? '100vw' : undefined,
-        maxWidth: '100%',
+        //width: Array.isArray(controls) ? '100vw' : undefined,
+        width: '100%',
         display: 'flex',
       }}
     >
