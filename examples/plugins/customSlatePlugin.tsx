@@ -9,7 +9,7 @@ export default pluginFactories.createComponentPlugin<{
   addToolbarButton: true, // whether to show it in the bottom toolbar
   type: 'SetColor', // a well defined string, this is kind of the id of the plugin
   object: 'mark', // mark is like a span, other options are inline and block
-  icon: <span>Color</span>, // an icon to show
+  icon: <span>Couleur</span>, // an icon to show
   label: 'Set Color',
   Component: 'span', // the component to render
   getStyle: ({ color }) => ({ color }),

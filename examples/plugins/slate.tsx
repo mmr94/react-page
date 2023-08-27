@@ -4,6 +4,7 @@ import slate from '@react-page/plugins-slate';
 // import '@react-page/plugins-slate/lib/index.css';
 
 import React from 'react';
+import fontSlatePlugin from './fontSlatePlugin';
 import customSlatePlugin from './customSlatePlugin';
 import katexSlatePlugin from './katexSlatePlugin';
 import styled from 'styled-components';
@@ -14,8 +15,8 @@ export const defaultSlate = slate((def) => ({
     ...def.plugins,
     // you can also add custom plugins. The namespace `custom` is just for organizing plugins
     custom: {
+      font:fontSlatePlugin,
       custom1: customSlatePlugin,
-      katex: katexSlatePlugin,
     },
   },
 }));
