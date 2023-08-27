@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo,useState,useRef } from 'react';
 import { BottomToolbar } from '../../../../ui';
 import type { CellPluginComponentProps } from '../../../types';
 import {
@@ -66,6 +66,18 @@ const PluginComponent: FC<
     ]
   );
 
+  const [localFocused,setLocalFocused]=useState(focused)
+  const _timeout:any = useRef(null);
+  useEffect(()=>{
+    if(focused===false && localFocused === true)
+    {
+      _timeout.current=setTimeout(()=>setLocalFocused(focused),100)
+    }else
+    {
+      setLocalFocused(focused)
+    }
+  },[focused])
+
   // In case of non-zero cell spacing, nested layouts (layout plugins with children) should have their
   // margin collapsing functionality off. The simplest solution is to use display:flex for the below wrapping <div>.
   // This however is not compatible with inline elements flotation, so if a cell has inline neighbors, we are going
@@ -104,7 +116,7 @@ const PluginComponent: FC<
         </div>
         <Toolbar
           nodeId={nodeId}
-          open={focused}
+          open={localFocused}
           pluginControls={
             isEditMode && plugin?.controls ? (
               <PluginControls
