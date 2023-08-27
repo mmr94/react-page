@@ -24,8 +24,6 @@ export const BottomToolbarDrawer: FC<
   const divider = (
     <Divider
       style={{
-        marginLeft: -24,
-        marginRight: -24,
         marginTop: 12,
         marginBottom: 12,
       }}
@@ -49,17 +47,18 @@ export const BottomToolbarDrawer: FC<
         anchor={"left"}
         PaperProps={{
           style: {
-            maxWidth: "30vw",
+            width: "450px",
           },
         }}
       >
         <div
           style={{
             pointerEvents: 'all',
-            border: `${dark ? darkBlack : brightBorder} 1px solid`,
-            borderRadius: '4px 4px 0 0',
-            backgroundColor: dark ? darkBlack : bright,
-            padding: '12px 24px',
+            //border: `${dark ? darkBlack : brightBorder} 1px solid`,
+            //borderRadius: '4px 4px 0 0',
+            //backgroundColor: dark ? darkBlack : bright,
+            padding: '12px 12px',
+            width:"inherit",
 
             ...(isSmall
               ? {
@@ -72,12 +71,9 @@ export const BottomToolbarDrawer: FC<
                   //minWidth: '50vw',
                   //maxWidth: 'min(1280px, calc(100vw - 250px))',
                 }),
-            boxShadow: '0px 1px 8px -1px rgba(0,0,0,0.4)',
+            //boxShadow: '0px 1px 8px -1px rgba(0,0,0,0.4)',
             position: 'relative',
 
-            transformOrigin: 'bottom',
-            transform: `scale(${scale})`,
-            transition: 'scale 0.3s',
             ...style,
           }}
         >
