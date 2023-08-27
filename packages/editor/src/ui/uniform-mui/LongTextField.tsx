@@ -24,6 +24,7 @@ const LongText = ({
 }: LongTextFieldProps) => {
   return (
     <TextField
+      variant='outlined'
       disabled={disabled}
       error={!!error}
       fullWidth

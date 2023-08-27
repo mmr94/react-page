@@ -41,6 +41,7 @@ function Date({
 }: DateFieldProps) {
   return (
     <TextField
+      variant='outlined'
       disabled={disabled}
       error={!!error}
       fullWidth

@@ -32,6 +32,7 @@ function Num({
 }: NumFieldProps) {
   return (
     <TextField
+      variant='outlined'
       disabled={disabled}
       error={!!error}
       fullWidth

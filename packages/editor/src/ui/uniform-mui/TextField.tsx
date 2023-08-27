@@ -24,6 +24,7 @@ function Text({
 }: TextFieldProps) {
   return (
     <TextField
+      variant='outlined'
       disabled={disabled}
       error={!!error}
       fullWidth

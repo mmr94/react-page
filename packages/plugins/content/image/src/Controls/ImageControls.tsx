@@ -23,13 +23,12 @@ const ImageControls: ImageControlType = (props) => {
                 })
               }
             />
-            <Typography variant="body1" style={{ margin: '20px 16px 0 16px' }}>
-              {t(props.translations?.or)}
-            </Typography>
+            <Typography variant="body1" style={{ margin: '20px 16px 0 16px' }}>OU</Typography>
           </>
         )}
         <TextField
-          placeholder={t(props.translations?.srcPlaceholder) ?? ''}
+          variant='outlined'
+          placeholder={"URL de l'image"}
           label={t(
             props.imageUpload
               ? props.translations?.haveUrl
@@ -50,7 +49,8 @@ const ImageControls: ImageControlType = (props) => {
 
       {/* Image link textbox and checkbox */}
       <TextField
-        placeholder={t(props.translations?.hrefPlaceholder) ?? ''}
+        variant='outlined'
+        placeholder={"Lien de l'image"}
         label={t(props.translations?.hrefLabel) ?? ''}
         name="href"
         style={{ width: '400px' }}
@@ -76,9 +76,9 @@ const ImageControls: ImageControlType = (props) => {
         label={t(props.translations?.openNewWindow)}
       />
 
-      <br />
-      {/* Image's meta like alt... */}
+      {/* Image's meta like alt...
       <TextField
+        variant='outlined'
         placeholder={t(props.translations?.altPlaceholder) ?? ''}
         label={t(props.translations?.altLabel) ?? ''}
         name="alt"
@@ -90,6 +90,7 @@ const ImageControls: ImageControlType = (props) => {
           })
         }
       />
+      */}
     </>
   );
 };

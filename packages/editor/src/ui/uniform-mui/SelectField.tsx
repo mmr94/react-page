@@ -183,6 +183,7 @@ function Select(props: SelectFieldProps) {
 
   return (
     <TextField
+
       disabled={disabled}
       error={!!error}
       fullWidth={fullWidth}
@@ -209,7 +210,7 @@ function Select(props: SelectFieldProps) {
         ...filteredProps,
       }}
       value={native && !value ? '' : value}
-      variant={variant}
+      variant={'outlined'}
       {...textFieldProps}
     >
       {(hasPlaceholder || !required || !hasValue) && (
