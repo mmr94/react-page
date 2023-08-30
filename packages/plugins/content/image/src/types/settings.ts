@@ -1,4 +1,4 @@
-import type { CellPluginRenderer, ImageUploadType } from '@react-page/editor';
+import type { CellPluginRenderer, ImageUploadType } from '@kehila/react-page-editor';
 import type { ImageControlType } from './controls';
 import type { ImageState } from './state';
 

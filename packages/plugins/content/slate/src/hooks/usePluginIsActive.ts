@@ -1,4 +1,4 @@
-import type { DataTType } from '@react-page/editor';
+import type { DataTType } from '@kehila/react-page-editor';
 import type { SlatePluginDefinition } from '../types/slatePluginDefinitions';
 import useCurrentNodeWithPlugin from './useCurrentNodeWithPlugin';
 

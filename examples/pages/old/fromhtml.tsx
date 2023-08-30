@@ -1,5 +1,5 @@
-import type { Cell, Value, Value_v0 } from '@react-page/editor';
-import Editor, { migrateValue } from '@react-page/editor';
+import type { Cell, Value, Value_v0 } from '@kehila/react-page-editor';
+import Editor, { migrateValue } from '@kehila/react-page-editor';
 import type { SlateCellPlugin } from '@react-page/plugins-slate';
 import type { GetStaticProps } from 'next';
 

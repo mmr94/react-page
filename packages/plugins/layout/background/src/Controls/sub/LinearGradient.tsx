@@ -4,8 +4,8 @@ import IconButton from '@mui/material/IconButton';
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
-import type { RGBColor } from '@react-page/editor';
-import { ColorPicker } from '@react-page/editor';
+import type { RGBColor } from '@kehila/react-page-editor';
+import { ColorPicker } from '@kehila/react-page-editor';
 import React from 'react';
 import type { BackgroundProps } from '../../types/component';
 

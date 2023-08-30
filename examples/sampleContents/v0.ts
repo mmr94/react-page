@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 
-import type { Value_v0 } from '@react-page/editor';
+import type { Value_v0 } from '@kehila/react-page-editor';
 
 const contents: Value_v0[] = [
   {

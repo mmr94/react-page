@@ -6,7 +6,7 @@ import type { MakeOptional } from './types/makeOptional';
 import { ModeEnum } from './types/ModeEnum';
 
 export { ModeEnum };
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 
 const BackgroundDefaultControls = lazyLoad(() => import('./Controls/Controls'));
 

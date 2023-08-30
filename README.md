@@ -10,19 +10,19 @@ ReactPage is a smart, extensible and modern editor ("WYSIWYG") for the web writt
 
 ## Install
 
-`yarn add @react-page/editor`
+`yarn add @kehila/react-page-editor`
 
 or
 
-`npm install --save @react-page/editor`
+`npm install --save @kehila/react-page-editor`
 
 There is also a `beta` release channel, which might contain unstable features:
 
-`yarn add @react-page/editor@beta`
+`yarn add @kehila/react-page-editor@beta`
 
 or
 
-`npm install --save @react-page/editor@beta`
+`npm install --save @kehila/react-page-editor@beta`
 
 ## Demo
 

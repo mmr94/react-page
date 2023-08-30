@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 // The editor core
-import type { Value } from '@react-page/editor';
-import { createValue } from '@react-page/editor';
+import type { Value } from '@kehila/react-page-editor';
+import { createValue } from '@kehila/react-page-editor';
 import { Button } from '@mui/material';
-import Editor from '@react-page/editor';
+import Editor from '@kehila/react-page-editor';
 
 import slate from '@react-page/plugins-slate';
 

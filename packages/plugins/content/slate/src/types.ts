@@ -1,4 +1,4 @@
-import type { DataTType } from '@react-page/editor';
+import type { DataTType } from '@kehila/react-page-editor';
 
 export type Data = DataTType;
 export type CustomText = {

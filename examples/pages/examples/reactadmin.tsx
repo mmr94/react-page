@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@mui/material';
 import type { Record as RecordType } from 'ra-core';
-import type { CellPlugin } from '@react-page/editor';
+import type { CellPlugin } from '@kehila/react-page-editor';
 import slate, {
   DEFAULT_SLATE_PLUGIN_ID,
   pluginFactories,

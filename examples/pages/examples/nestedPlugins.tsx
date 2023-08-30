@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 // The editor core
-import type { CellPlugin, Value } from '@react-page/editor';
-import Editor from '@react-page/editor';
+import type { CellPlugin, Value } from '@kehila/react-page-editor';
+import Editor from '@kehila/react-page-editor';
 
 // The rich text area plugin
 import slate from '@react-page/plugins-slate';

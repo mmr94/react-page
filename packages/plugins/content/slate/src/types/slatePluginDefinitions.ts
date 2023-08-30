@@ -1,4 +1,4 @@
-import type { DataTAny, DataTType, JsonSchema } from '@react-page/editor';
+import type { DataTAny, DataTType, JsonSchema } from '@kehila/react-page-editor';
 import type { ReactNode } from 'react';
 import type { Editor, Node } from 'slate';
 import type { Data } from '../types';

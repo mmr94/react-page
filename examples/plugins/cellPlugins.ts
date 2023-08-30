@@ -12,8 +12,8 @@ import html5video from '@react-page/plugins-html5-video';
 // import '@react-page/plugins-html5-video/lib/index.css';
 
 // The image plugin
-import type { ImageUploadType } from '@react-page/plugins-image';
-import { imagePlugin } from '@react-page/plugins-image';
+import type { ImageUploadType } from '@kehila/react-page-plugins-image';
+import { imagePlugin } from '@kehila/react-page-plugins-image';
 // import '@react-page/plugins-image/lib/index.css';
 
 // The spacer plugin

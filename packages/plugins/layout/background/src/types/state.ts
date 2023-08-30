@@ -1,4 +1,4 @@
-import type { RGBColor } from '@react-page/editor';
+import type { RGBColor } from '@kehila/react-page-editor';
 import type { Gradient } from './gradient';
 import type { ModeEnum } from './ModeEnum';
 

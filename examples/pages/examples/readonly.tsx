@@ -1,5 +1,5 @@
 // The editor core
-import Editor from '@react-page/editor';
+import Editor from '@kehila/react-page-editor';
 // image
 import image from '@react-page/plugins-image';
 // The rich text area plugin

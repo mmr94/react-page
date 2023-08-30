@@ -1,5 +1,5 @@
-import type { CellPlugin } from '@react-page/editor';
-import { ColorPickerField } from '@react-page/editor';
+import type { CellPlugin } from '@kehila/react-page-editor';
+import { ColorPickerField } from '@kehila/react-page-editor';
 import React from 'react';
 
 type Palette = {

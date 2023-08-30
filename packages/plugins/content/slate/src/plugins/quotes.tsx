@@ -1,5 +1,5 @@
 import React from 'react';
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 import createSimpleHtmlBlockPlugin from '../pluginFactories/createSimpleHtmlBlockPlugin';
 
 const BlockquoteIcon = lazyLoad(

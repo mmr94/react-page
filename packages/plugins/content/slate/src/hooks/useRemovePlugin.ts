@@ -1,4 +1,4 @@
-import type { DataTType } from '@react-page/editor';
+import type { DataTType } from '@kehila/react-page-editor';
 import { useCallback } from 'react';
 import type { Editor } from 'slate';
 import { Transforms } from 'slate';

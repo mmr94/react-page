@@ -2,8 +2,8 @@ import React from 'react';
 import Switch from '@mui/material/Switch';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import type { ImageLoaded, ImageUploaded } from '@react-page/editor';
-import { ImageUpload } from '@react-page/editor';
+import type { ImageLoaded, ImageUploaded } from '@kehila/react-page-editor';
+import { ImageUpload } from '@kehila/react-page-editor';
 import Typography from '@mui/material/Typography';
 
 import type { BackgroundProps } from '../../types/component';

@@ -1,4 +1,4 @@
-import type { CellPlugin, ImageUploadType, RGBColor } from '@react-page/editor';
+import type { CellPlugin, ImageUploadType, RGBColor } from '@kehila/react-page-editor';
 
 import type { BackgroundControlsProps } from './controls';
 import type { ModeEnum } from './ModeEnum';

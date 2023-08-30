@@ -1,6 +1,6 @@
 import { Paper } from '@mui/material';
-import type { EditorProps } from '@react-page/editor';
-import Editor from '@react-page/editor';
+import type { EditorProps } from '@kehila/react-page-editor';
+import Editor from '@kehila/react-page-editor';
 import React from 'react';
 
 import { Labeled, useInput } from 'react-admin';

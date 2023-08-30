@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { BackgroundProps } from '../types/component';
 
-import type { ImageLoaded, RGBColor } from '@react-page/editor';
+import type { ImageLoaded, RGBColor } from '@kehila/react-page-editor';
 import type { ModeEnum } from '../types/ModeEnum';
 
 import Inner from './Inner';

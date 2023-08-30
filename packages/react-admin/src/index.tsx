@@ -1,4 +1,4 @@
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 
 // lazyload everything to avoid accidental bundle size increase
 export const RaReactPageInput = lazyLoad(() => import('./RaReactPageInput'));

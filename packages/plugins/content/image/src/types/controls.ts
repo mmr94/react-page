@@ -1,7 +1,7 @@
 import type {
   CellPluginComponentProps,
   ImageUploadType,
-} from '@react-page/editor';
+} from '@kehila/react-page-editor';
 
 import type { ImageState } from './state';
 import type { Translations } from './translations';

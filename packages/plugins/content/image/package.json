@@ -1,11 +1,10 @@
 {
-  "name": "@react-page/plugins-image",
+  "name": "@kehila/react-page-plugins-image",
   "version": "0.0.0",
   "main": "./lib/index.js",
   "module": "./lib-es/index.js",
   "sideEffects": false,
   "typings": "./lib/index.d.ts",
-  "author": "ORY GmbH",
   "license": "MIT",
   "scripts": {
     "build": "npm-run-all --parallel build:lib build:css",
@@ -24,7 +23,7 @@
   },
   "dependencies": {
     "@mui/icons-material": "^5.8.0",
-    "@react-page/editor": "0.0.0"
+    "@kehila/react-page-editor": "0.0.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,4 +1,4 @@
-import type { CellPluginComponentProps } from '@react-page/editor';
+import type { CellPluginComponentProps } from '@kehila/react-page-editor';
 
 import type { VideoState } from './state';
 

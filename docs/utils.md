@@ -9,7 +9,7 @@ and that it provides some shortcuts.
 You need to pass in the language and your cellPlugins as second argument:
 
 ```ts
-import { createValue } from '@react-page/editor';
+import { createValue } from '@kehila/react-page-editor';
 
 const partialValue = {
   rows: [
@@ -63,7 +63,7 @@ Can be used to extract plaintext from the editors value.
 You need to pass in the language and your cellPlugins as second argument:
 
 ```ts
-import { getTextContents } from '@react-page/editor';
+import { getTextContents } from '@kehila/react-page-editor';
 
 const contents = getTextContents(value, {
   lang: 'en',

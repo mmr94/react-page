@@ -51,7 +51,7 @@ To customize the **slate CellPlugin**, call it with a function that changes its 
 In this example, only some of the inbuilt Slate plugins are being enabled:
 
 ```tsx
-import Editor from '@react-page/editor';
+import Editor from '@kehila/react-page-editor';
 import slate from '@react-page/plugins-slate';
 import '@react-page/plugins-slate/lib/index.css';
 

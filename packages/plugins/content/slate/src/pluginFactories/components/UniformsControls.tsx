@@ -3,8 +3,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DoneIcon from '@mui/icons-material/Done';
-import type { JsonSchema } from '@react-page/editor';
-import { makeUniformsSchema, AutoForm, AutoFields } from '@react-page/editor';
+import type { JsonSchema } from '@kehila/react-page-editor';
+import { makeUniformsSchema, AutoForm, AutoFields } from '@kehila/react-page-editor';
 import React, { useCallback, useRef, useState } from 'react';
 import type { Data } from '../../types';
 

@@ -1,5 +1,5 @@
 import propisValid from '@emotion/is-prop-valid';
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 import isObject from 'lodash.isobject';
 import type { DependencyList } from 'react';
 import React, { useCallback } from 'react';

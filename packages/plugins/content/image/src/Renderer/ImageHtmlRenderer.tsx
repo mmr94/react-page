@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { iconStyle } from './../common/styles';
-import type { CellPluginComponentProps } from '@react-page/editor';
-import { lazyLoad } from '@react-page/editor';
+import type { CellPluginComponentProps } from '@kehila/react-page-editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 import type { ImageState } from '../types/state';
 
 const ImageIcon = lazyLoad(() => import('@mui/icons-material/Landscape'));

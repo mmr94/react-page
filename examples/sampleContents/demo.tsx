@@ -1,4 +1,4 @@
-import type { Value } from '@react-page/editor';
+import type { Value } from '@kehila/react-page-editor';
 export const demo: Value = {
   id: '2390df',
   version: 1,
@@ -351,7 +351,7 @@ export const demo: Value = {
           dataI18n: {
             en: {
               language: 'tsx',
-              code: "\nimport Editor from '@react-page/editor'\n\n// use ReactPage for editing Content\n<Editor\n    cellPlugins={yourCellPlugins}\n    value={theCurrentValue}\n    onChange={newValue => saveTheValue(newValue)}\n/>\n\n// or just for displaying content\n<Editor\n    cellPlugins={yourCellPlugins}\n    value={theCurrentValue}\n    readOnly={true}\n/>\n",
+              code: "\nimport Editor from '@kehila/react-page-editor'\n\n// use ReactPage for editing Content\n<Editor\n    cellPlugins={yourCellPlugins}\n    value={theCurrentValue}\n    onChange={newValue => saveTheValue(newValue)}\n/>\n\n// or just for displaying content\n<Editor\n    cellPlugins={yourCellPlugins}\n    value={theCurrentValue}\n    readOnly={true}\n/>\n",
             },
           },
           rows: [],

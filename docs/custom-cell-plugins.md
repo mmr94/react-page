@@ -7,7 +7,7 @@ that gets displayed in that _cell_.
 You define it like this:
 
 ```tsx
-import { CellPlugin } from '@react-page/editor';
+import { CellPlugin } from '@kehila/react-page-editor';
 import React from 'react';
 
 // use a type here, not an interface
@@ -40,7 +40,7 @@ const myFirstcellPlugin: CellPlugin<Data> = {
 
 // and later add it as cellPlugins to your `<Editor />
 
-import Editor from '@react-page/editor
+import Editor from '@kehila/react-page-editor
 
 const MyApp = () => {
   return (

@@ -1,10 +1,10 @@
-import type { Value } from '@react-page/editor';
+import type { Value } from '@kehila/react-page-editor';
 import Editor, {
   useInsertNew,
   useSetPreviewMode,
   useSetEditMode,
   useUndo,
-} from '@react-page/editor';
+} from '@kehila/react-page-editor';
 
 import React, { useState } from 'react';
 import PageLayout from '../../components/PageLayout';

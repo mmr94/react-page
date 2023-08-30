@@ -3,8 +3,8 @@
 The `<Editor />` component is the 1st component to be instantiated. It is used both for editing and displaying content (with `readOnly` set to true). At its simplest it needs a rich text editor - react-page comes preconfigured with Slate as a 'cellPlugin' to be used as the rich text editor. Optionally an image plugin can be added for uploading images or loading images from an existing source (URL).
 
 ```tsx
-import Editor, { Value } from '@react-page/editor';
-import '@react-page/editor/lib/index.css';
+import Editor, { Value } from '@kehila/react-page-editor';
+import '@kehila/react-page-editor/lib/index.css';
 
 // The rich text area plugin (Slate)
 import slate from '@react-page/plugins-slate';

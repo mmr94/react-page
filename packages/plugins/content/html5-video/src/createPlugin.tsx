@@ -1,4 +1,4 @@
-import type { CellPlugin } from '@react-page/editor';
+import type { CellPlugin } from '@kehila/react-page-editor';
 
 import { defaultSettings } from './default/settings';
 import Html5VideoHtmlRenderer from './Renderer/Html5VideoHtmlRenderer';

@@ -1,4 +1,4 @@
-import type { Value } from '@react-page/editor';
+import type { Value } from '@kehila/react-page-editor';
 export const raAboutUs: Value = {
   id: '3hsiv3',
   version: 1,

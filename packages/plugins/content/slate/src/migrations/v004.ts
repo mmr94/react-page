@@ -1,4 +1,4 @@
-import { Migration } from '@react-page/editor';
+import { Migration } from '@kehila/react-page-editor';
 import isEmpty from 'lodash.isempty';
 import type { Element, Node, Text } from 'slate';
 // this is for slate 0.50.0

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { DataTType, JsonSchema } from '@react-page/editor';
+import type { DataTType, JsonSchema } from '@kehila/react-page-editor';
 import React, {
   useCallback,
   useEffect,

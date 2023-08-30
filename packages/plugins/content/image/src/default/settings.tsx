@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ImageSettings } from '../types/settings';
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 const Panorama = lazyLoad(() => import('@mui/icons-material/Panorama'));
 
 export const defaultTranslations = {

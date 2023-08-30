@@ -12,7 +12,7 @@ Breaking changes will primarily published here: https://github.com/react-page/re
 It introduces some breaking changes that had to be done to make the api more clear and enable future improvements. The migration steps should be straight forward though.
 
 - be aware that it will migrate the data to a new format. This migration will happen the next time your users save new content. There is no down migration, so we advice to make a backup before upgrading and immediatly fill out an issue here when you notice any problem. We are happy to help.
-- '@react-page/core', '@react-page/ui', '@react-page/renderer' no longer exist, you can import everything from '@react-page/editor'.
+- '@react-page/core', '@react-page/ui', '@react-page/renderer' no longer exist, you can import everything from '@kehila/react-page-editor'.
 - `plugins` prop on `<Editor />` has been renamed to `cellPlugins` to make way for other plugin types in the future
 - `cellPlugins` take a an array of `CellPlugin`, layout plugins and content plugins have been unified
 - `defaultPlugin` is no longer required. The editor will no longer automatically add a cell when its empty. Instead it shows a Button to add a new cell there.

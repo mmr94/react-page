@@ -1,4 +1,4 @@
-import type { CellPlugin } from '@react-page/editor';
+import type { CellPlugin } from '@kehila/react-page-editor';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import type { Field } from '../components/ContactFormExample';

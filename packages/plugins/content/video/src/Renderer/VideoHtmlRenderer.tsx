@@ -2,7 +2,7 @@ import React from 'react';
 import PlayArrow from '@mui/icons-material/PlayArrow';
 import { iconStyle } from '../common/styles';
 
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 
 import type { VideoHtmlRendererProps } from '../types/renderer';
 

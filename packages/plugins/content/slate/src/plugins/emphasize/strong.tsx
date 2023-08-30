@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 import createMarkPlugin from '../../pluginFactories/createMarkPlugin';
 
 const BoldIcon = lazyLoad(() => import('@mui/icons-material/FormatBold'));

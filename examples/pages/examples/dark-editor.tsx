@@ -1,5 +1,5 @@
-import type { Value } from '@react-page/editor';
-import Editor, { defaultThemeOptions } from '@react-page/editor';
+import type { Value } from '@kehila/react-page-editor';
+import Editor, { defaultThemeOptions } from '@kehila/react-page-editor';
 import { demo } from '../../sampleContents/demo';
 import React, { useState } from 'react';
 import { cellPlugins } from '../../plugins/cellPlugins';

@@ -1,4 +1,4 @@
-import type { CellPlugin } from '@react-page/editor';
+import type { CellPlugin } from '@kehila/react-page-editor';
 import React from 'react';
 import { defaultSettings } from './default/settings';
 import type { ImageSettings } from './types/settings';

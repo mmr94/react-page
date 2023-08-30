@@ -1,4 +1,4 @@
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 import React from 'react';
 import { ConditionalWrapper } from './ConditionalWrapper';
 import { useTheme } from '@mui/material';

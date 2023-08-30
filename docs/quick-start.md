@@ -3,9 +3,9 @@
 To install the react-page editor, use:
 
 ```bash
-$ yarn add @react-page/editor
+$ yarn add @kehila/react-page-editor
 # OR
-$ npm i --save @react-page/editor
+$ npm i --save @kehila/react-page-editor
 ```
 
 usually you'll also want to have the default rich text editor (slate):
@@ -33,7 +33,7 @@ $ npm i --save @emotion/react @emotion/styled
 Make sure to import the css file as well somewhere in your app:
 
 ```
-import '@react-page/editor/lib/index.css';
+import '@kehila/react-page-editor/lib/index.css';
 ```
 
 ## Using material-ui 4 in parallel

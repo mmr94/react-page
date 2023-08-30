@@ -1,4 +1,4 @@
-import type { DataTType } from '@react-page/editor';
+import type { DataTType } from '@kehila/react-page-editor';
 import type { NodeEntry } from 'slate';
 import { Editor } from 'slate';
 

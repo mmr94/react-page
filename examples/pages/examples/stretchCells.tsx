@@ -1,6 +1,6 @@
 import React from 'react';
-import type { CellPlugin, Value } from '@react-page/editor';
-import Editor, { createValue } from '@react-page/editor';
+import type { CellPlugin, Value } from '@kehila/react-page-editor';
+import Editor, { createValue } from '@kehila/react-page-editor';
 import slate from '@react-page/plugins-slate';
 
 import PageLayout from '../../components/PageLayout';

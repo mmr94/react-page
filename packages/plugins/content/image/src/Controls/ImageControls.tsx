@@ -2,7 +2,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { ImageUpload, useUiTranslator } from '@react-page/editor';
+import { ImageUpload, useUiTranslator } from '@kehila/react-page-editor';
 import React from 'react';
 import type { ImageControlType } from '../types/controls';
 
@@ -50,10 +50,10 @@ const ImageControls: ImageControlType = (props) => {
       {/* Image link textbox and checkbox */}
       <TextField
         variant='outlined'
+        fullWidth
         placeholder={"Lien de l'image"}
         label={t(props.translations?.hrefLabel) ?? ''}
         name="href"
-        style={{ width: '400px' }}
         value={props.data.href ?? ''}
         onChange={(e) =>
           props.onChange({

@@ -1,4 +1,4 @@
-import { Migration } from '@react-page/editor';
+import { Migration } from '@kehila/react-page-editor';
 
 import rename from 'deep-rename-keys';
 const migration = new Migration({

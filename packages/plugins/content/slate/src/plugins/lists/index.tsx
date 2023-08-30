@@ -1,4 +1,4 @@
-import { lazyLoad } from '@react-page/editor';
+import { lazyLoad } from '@kehila/react-page-editor';
 import React from 'react';
 import { createListItemPlugin } from '../../pluginFactories';
 import createIndentionPlugin from '../../pluginFactories/createListIndentionPlugin';

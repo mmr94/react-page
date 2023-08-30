@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import { AutoFields, ColorPickerField } from '@react-page/editor';
+import { AutoFields, ColorPickerField } from '@kehila/react-page-editor';
 // The editor core
-import type { Value, CellPlugin } from '@react-page/editor';
-import Editor, { createValue } from '@react-page/editor';
+import type { Value, CellPlugin } from '@kehila/react-page-editor';
+import Editor, { createValue } from '@kehila/react-page-editor';
 
 import slate from '@react-page/plugins-slate';
 

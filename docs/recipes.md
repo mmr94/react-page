@@ -4,7 +4,7 @@ Consider you want to add custom styling to all plugins. Because a `CellPlugin` i
 You can use a map function to customize a list of plugings:
 
 ```tsx
-import { CellPlugin } from '@react-page/editor';
+import { CellPlugin } from '@kehila/react-page-editor';
 
 const rawCellPlugins = [slate(), image, background, myPlugin];
 
