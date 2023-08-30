@@ -47,7 +47,7 @@ export const BottomToolbarDrawer: FC<
         anchor={"left"}
         PaperProps={{
           style: {
-            width: "450px",
+            width: "350px",
           },
         }}
       >
