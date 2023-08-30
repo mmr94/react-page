@@ -4,8 +4,9 @@ import { PluginDrawer } from '../PluginDrawer';
 import { Trash } from '../Trash';
 import type { StickyNess } from '../Sidebar';
 import { Sidebar } from '../Sidebar';
-import { useOption } from '../../core/components/hooks';
+import { useIsEditMode, useOption } from '../../core/components/hooks';
 import { MultiNodesBottomToolbar } from '../MultiNodesBottomToolbar';
+import { BottomToolbar } from '../BottomToolbar';
 
 export default React.memo(
   ({
@@ -19,12 +20,14 @@ export default React.memo(
     stickyNess?: StickyNess;
   }) => {
     const hideEditorSidebar = useOption('hideEditorSidebar');
+    const isEditMode = useIsEditMode();
     return (
       <>
         <Trash />
         {!hideEditorSidebar && <Sidebar stickyNess={stickyNess} />}
         <PluginDrawer />
-        <MultiNodesBottomToolbar />
+        {/*<MultiNodesBottomToolbar />*/}
+        <BottomToolbar open={isEditMode} />
       </>
     );
   }

@@ -114,21 +114,25 @@ const PluginComponent: FC<
             children
           )}
         </div>
-        <Toolbar
-          nodeId={nodeId}
-          open={localFocused}
-          pluginControls={
-            isEditMode && plugin?.controls ? (
-              <PluginControls
-                componentProps={componentProps}
-                controls={plugin?.controls}
-              />
-            ) : null
-          }
-        />
+
       </>
     </Provider>
   );
 };
+
+/*
+<Toolbar
+    nodeId={nodeId}
+    open={localFocused}
+    pluginControls={
+      isEditMode && plugin?.controls ? (
+        <PluginControls
+          componentProps={componentProps}
+          controls={plugin?.controls}
+        />
+      ) : null
+    }
+  />
+*/
 
 export default PluginComponent;

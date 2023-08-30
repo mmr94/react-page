@@ -8,7 +8,7 @@ export type BottomToolbarProps = {
   anchor?: 'top' | 'bottom' | 'left' | 'right';
   pluginControls?: ReactNode;
   actionsLeft?: ReactNode;
-} & BottomToolbarToolsProps;
+} //& BottomToolbarToolsProps;
 
 export type BottomToolbarToolsProps = {
   nodeId: string;
