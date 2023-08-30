@@ -19,8 +19,9 @@ export type BottomToolbarMainBarProps = {
   nodeId: string;
   actionsLeft?: React.ReactNode;
 };
-const divider = (
+const divider=(full=false)=>(
   <Divider
+    variant={full?"fullWidth":"middle"}
     style={{
       marginTop: 12,
       marginBottom: 12,
@@ -73,7 +74,7 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
           </Grid>
 
         </Grid>
-        {divider}
+        {divider(false)}
 
         <Grid container={true} direction="row" alignItems="center" justifyContent="space-between">
 
@@ -87,9 +88,10 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
             </Grid>
 
         </Grid>
-        {divider}
+        {divider(false)}
 
         {showMoveButtons ? (
+          <>
           <Grid container={true} direction="row" alignItems="center" justifyContent="space-between">
 
             <Grid item={true}>
@@ -102,6 +104,9 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
             </Grid>
 
           </Grid>
+
+          {divider(true)}
+          </>
         ) : null}
       </div>
     );

@@ -21,6 +21,7 @@ export type BottomToolbarDrawerProps = {
 export const BottomToolbarDrawer: FC<
   PropsWithChildren<BottomToolbarDrawerProps>
 > = ({ className, anchor, open, scale = 1, children, style = {} }) => {
+
   const divider = (
     <Divider
       style={{
@@ -73,7 +74,6 @@ export const BottomToolbarDrawer: FC<
                 }),
             //boxShadow: '0px 1px 8px -1px rgba(0,0,0,0.4)',
             position: 'relative',
-
             ...style,
           }}
         >

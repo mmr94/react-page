@@ -44,7 +44,6 @@ export const BottomToolbar: FC<PropsWithChildren<BottomToolbarProps>> =
               <Typography variant='subtitle1' color="GrayText">
                 {t("Selectionnez un plugin")}
               </Typography>
-
             </div>
           )}
         </BottomToolbarDrawer>

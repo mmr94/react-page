@@ -9,7 +9,7 @@ const SelectLang = () => {
   if (languages && languages?.length > 0) {
     return (
       <Select
-        variant="standard"
+        variant="outlined"
         value={lang || ''}
         onChange={(e) => setLang(e.target.value as string)}
       >
