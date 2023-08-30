@@ -1,6 +1,6 @@
 {
   "name": "@kehila/react-page-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Marco Wettstein",
   "license": "MIT",
   "main": "./lib/index.js",
