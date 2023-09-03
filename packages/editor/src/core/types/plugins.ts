@@ -4,6 +4,7 @@ import type { JsonSchema } from './jsonSchema';
 import type { ChildConstraints } from './constraints';
 import type { CellSpacing } from './renderOptions';
 import type { PropsWithChildren } from 'react';
+import { Devices } from '../actions/display';
 
 export type DataTType = Record<string, unknown>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -67,6 +68,8 @@ export type CellPluginComponentProps<DataT extends DataTType = DataTAny> = {
    * whether the editor is in edit mode
    */
   isEditMode: boolean;
+
+  device?:Devices;
 };
 
 export type CellPluginMissingProps = Omit<

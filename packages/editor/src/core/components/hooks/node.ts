@@ -16,6 +16,8 @@ import { useUpdateCellData } from './nodeActions';
 import { useLang } from './options';
 import { useRenderOption } from './renderOptions';
 import type { CellPluginOnChangeOptions } from '../../types';
+import { Devices } from '../../actions/display';
+import { useDevice, useDeviceByScreen } from './display';
 
 /**
  *
@@ -311,11 +313,11 @@ export const useCellDataI18nRaw = (nodeId: string) => {
  * @param lang a language key
  * @returns the data object in the given language of the given cell
  */
-export const useCellData = (nodeId: string, lang?: string) => {
+export const useCellData = (nodeId: string, lang?: string, device?:Devices) => {
   const currentLang = useLang();
   const theLang = lang ?? currentLang;
 
-  return useCellProps(nodeId, (c) => getCellData(c, theLang) ?? {});
+  return useCellProps(nodeId, (c) => getCellData(c, theLang,device) ?? {});
 };
 
 /**
@@ -352,7 +354,12 @@ export const useCellInnerDivStylingProps = (
  * @param nodeId the id of the cell
  */
 export const useDebouncedCellData = (nodeId: string) => {
-  const cellData = useCellData(nodeId);
+  const currentLang = useLang();
+  const device:Devices=useDevice()
+  //console.log("DEVICE",device)
+
+  const cellData = useCellData(nodeId,currentLang,device);
+  //console.log("cellData",cellData)
 
   const [currentPartialData, setCurrentPartialData] = useState<{
     [lang: string]: Record<string, unknown>;
@@ -360,7 +367,7 @@ export const useDebouncedCellData = (nodeId: string) => {
   const currentPartialDataRef = useRef<{
     [lang: string]: Record<string, unknown>;
   }>();
-  const currentLang = useLang();
+
 
   const currentData = useMemo(() => {
     return {
@@ -375,7 +382,7 @@ export const useDebouncedCellData = (nodeId: string) => {
     };
   }>({});
 
-  const updateCellDataImmediatly = useUpdateCellData(nodeId);
+  const updateCellDataImmediatly = useUpdateCellData(nodeId,device);
 
   const onChange = useCallback(
     (

@@ -1,10 +1,21 @@
+import { Devices } from '../actions/display';
 import type { Cell } from '../types';
+import _ from 'lodash'
 
 export const getCellData = (
-  cell: null | Pick<Cell, 'dataI18n'>,
-  lang: string
+  cell: any,
+  lang: string,
+  device:Devices="DESKTOP"
 ) => {
-  const dataI18n = cell?.dataI18n;
+  //console.log("DATA",device,cell?.dataI18n,cell?.dataMobI18n)
+
+  var dataI18n = _.merge({}, cell?.dataMobI18n,cell?.dataI18n);
+  if(device==="MOBILE"){
+    dataI18n = _.merge({}, cell?.dataI18n,cell?.dataMobI18n);
+  }
+
+  //console.log("FINAL DATA",device,dataI18n)
+
 
   return (
     dataI18n?.[lang] ??
@@ -13,3 +24,4 @@ export const getCellData = (
     {}
   );
 };
+

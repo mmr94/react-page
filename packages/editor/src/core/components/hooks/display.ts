@@ -1,8 +1,34 @@
 import { useCallback } from 'react';
 
 import { useDispatch, useSelector } from '../../reduxConnect';
-import { setZoom } from '../../actions/display';
+import { Devices, setDevice, setZoom } from '../../actions/display';
 import { useOption } from './options';
+
+export const useSetDevice = () => {
+  const dispatch = useDispatch();
+  return useCallback((device: Devices) => dispatch(setDevice(device)), [dispatch]);
+};
+
+/**
+ * @returns the current device
+ */
+export const useDevice = () => {
+  return useSelector((state) => state.reactPage.display.device);
+};
+
+/**
+ * @returns the current device by screen
+ */
+export const useDeviceByScreen = ():Devices => {
+  let device:Devices='MOBILE'
+  let screenWidth:number=window.innerWidth
+  //console.log("screenWidth",screenWidth)
+
+  if(screenWidth>992){
+    device="DESKTOP"
+  }
+  return device
+};
 
 export const useSetZoom = () => {
   const dispatch = useDispatch();

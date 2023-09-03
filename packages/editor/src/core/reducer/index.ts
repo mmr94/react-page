@@ -30,6 +30,7 @@ export function initialState(value: Value | null, lang: string): RootState {
       display: {
         mode: 'edit',
         zoom: 1,
+        device:"DESKTOP"
       },
       settings: {
         lang,

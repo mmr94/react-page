@@ -1,4 +1,5 @@
 import type { Action } from 'redux';
+import { Devices } from '../display';
 
 export const CELL_UPDATE_IS_DRAFT = 'CELL_UPDATE_IS_DRAFT';
 export const CELL_UPDATE_DATA = 'CELL_UPDATE_DATA';
@@ -33,12 +34,13 @@ export interface UpdateCellDataAction extends Action {
   id: string;
   data: null | { [key: string]: unknown };
   lang: string;
+  device:Devices;
   type: typeof CELL_UPDATE_DATA;
   notUndoable?: boolean;
 }
 
 export const updateCellData =
-  (id: string) =>
+  (id: string,device:Devices="DESKTOP") =>
   (
     data: null | { [key: string]: unknown },
     options: {
@@ -50,6 +52,7 @@ export const updateCellData =
     ts: new Date(),
     id,
     data,
+    device,
     ...options,
   });
 

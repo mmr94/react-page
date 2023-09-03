@@ -5,6 +5,7 @@ import ToggleInsert from './ToggleInsert/index';
 import ToggleLayout from './ToggleLayout/index';
 import TogglePreview from './TogglePreview/index';
 import ToggleResize from './ToggleResize/index';
+import ToogleDevice from './Device/index';
 import UndoRedo from './UndoRedo';
 import Zoom from './Zoom';
 
@@ -67,6 +68,7 @@ export const Sidebar: React.FC<{
     zoomEnabled
       ? { action: <Zoom labelZoomIn="zoom in" labelZoomOut="zoom out" /> }
       : null,
+    { action: <ToogleDevice/> },
     editEnabled
       ? { action: <ToggleEdit label={t(defaultLabels.edit) ?? ''} /> }
       : null,
@@ -93,7 +95,7 @@ export const Sidebar: React.FC<{
         bottom: 0,
         right: 0,
         display: 'flex',
-        maxHeight: '100%',
+        //maxHeight: '100%',
         ...getStickyNessstyle(stickyNess),
       }}
     >

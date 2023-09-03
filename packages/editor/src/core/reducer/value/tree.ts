@@ -63,21 +63,47 @@ const cell = (s: Cell, a: CellAction, depth: number): Cell =>
           if (action.id === state.id) {
             // If this cell is being updated, set the data
             const reduced = reduce();
-            // copy because we mutate afterwards with delete
-            const newI18nData = { ...(reduced.dataI18n ?? {}) };
-            const emptyValue = action.data === null;
-            if (action.lang && emptyValue) {
-              delete newI18nData?.[action.lang];
+
+            console.log("CELL_UPDATE_DATA",action.device)
+
+            if(action.device === "DESKTOP")
+            {
+              // copy because we mutate afterwards with delete
+              const newI18nData = { ...(reduced.dataI18n ?? {}) };
+              const emptyValue = action.data === null;
+              if (action.lang && emptyValue) {
+                delete newI18nData?.[action.lang];
+              }
+              return {
+                ...reduced,
+                dataI18n: {
+                  ...(newI18nData ?? {}),
+                  ...(!emptyValue
+                    ? { [action.lang]: action.data as { [key: string]: unknown } }
+                    : {}),
+                },
+              };
             }
-            return {
-              ...reduced,
-              dataI18n: {
-                ...(newI18nData ?? {}),
-                ...(!emptyValue
-                  ? { [action.lang]: action.data as { [key: string]: unknown } }
-                  : {}),
-              },
-            };
+
+            if(action.device === "MOBILE")
+            {
+              // copy because we mutate afterwards with delete
+              const newI18nData = { ...(reduced.dataMobI18n ?? {}) };
+              const emptyValue = action.data === null;
+              if (action.lang && emptyValue) {
+                delete newI18nData?.[action.lang];
+              }
+              return {
+                ...reduced,
+                dataMobI18n: {
+                  ...(newI18nData ?? {}),
+                  ...(!emptyValue
+                    ? { [action.lang]: action.data as { [key: string]: unknown } }
+                    : {}),
+                },
+              };
+            }
+
           }
           return reduce();
 

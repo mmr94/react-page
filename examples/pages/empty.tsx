@@ -25,7 +25,10 @@ export default function Empty() {
         cellPlugins={cellPlugins}
         value={value}
         lang={LANGUAGES[0].lang}
-        onChange={setValue}
+        onChange={(v)=>{
+          console.log("VALUE EDITOR",v)
+          setValue(v)
+        }}
         languages={LANGUAGES}
       />
     </PageLayout>

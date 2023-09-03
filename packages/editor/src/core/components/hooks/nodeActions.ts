@@ -17,7 +17,7 @@ import {
   insertCellAtTheEnd,
   insertCellNewAsNewRow,
 } from '../../actions/cell/insert';
-import { setDisplayReferenceNodeId } from '../../actions/display';
+import { Devices, setDisplayReferenceNodeId } from '../../actions/display';
 import { setLang } from '../../actions/setting';
 import { useDispatch } from '../../reduxConnect';
 import type { CellDrag, PartialCell, Node } from '../../types/node';
@@ -75,7 +75,7 @@ export const useSetLang = () => {
  * @param id a cell id
  * @returns function to update the data of the given cell. Sets the data in the current language, unless options.lang is set
  */
-export const useUpdateCellData = (id: string) => {
+export const useUpdateCellData = (id: string,device:Devices="DESKTOP") => {
   const dispatch = useDispatch();
   const currentLang = useLang();
   return useCallback(
@@ -84,14 +84,14 @@ export const useUpdateCellData = (id: string) => {
       options: CellPluginOnChangeOptions = {}
     ) => {
       dispatch(
-        updateCellData(id)(data, {
+        updateCellData(id,device)(data, {
           notUndoable: false,
           lang: currentLang,
           ...options,
         })
       );
     },
-    [dispatch, id, currentLang]
+    [dispatch, id, currentLang,device]
   );
 };
 

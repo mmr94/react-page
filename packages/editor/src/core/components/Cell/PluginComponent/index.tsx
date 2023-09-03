@@ -12,10 +12,12 @@ import {
   useCellProps,
   useOption,
   useIsExclusivlyFocused,
+  useDeviceByScreen,
 } from '../../hooks';
 import PluginControls from '../PluginControls';
 import PluginMissing from '../PluginMissing';
 import NoopProvider from '../NoopProvider';
+import { Devices } from '../../../actions/display';
 
 const PluginComponent: FC<
   PropsWithChildren<{ nodeId: string; hasChildren: boolean }>
@@ -25,6 +27,8 @@ const PluginComponent: FC<
   const CustomPluginMissing = components?.CellPluginMissing;
   const isPreviewMode = useIsPreviewMode();
   const isEditMode = useIsEditMode();
+
+  const device:Devices=useDeviceByScreen()
 
   const [data, onChange] = useDebouncedCellData(nodeId);
   const pluginId = useCellProps(nodeId, (c) => c?.plugin?.id);
@@ -37,7 +41,7 @@ const PluginComponent: FC<
   const Provider = plugin?.Provider ?? NoopProvider;
   const remove = useRemoveCell(nodeId);
 
-  const Toolbar = components?.BottomToolbar ?? BottomToolbar;
+  //const Toolbar = components?.BottomToolbar ?? BottomToolbar;
 
   const componentProps = useMemo<CellPluginComponentProps>(
     () => ({
@@ -51,6 +55,7 @@ const PluginComponent: FC<
       isEditMode,
       isPreviewMode,
       remove,
+      device
     }),
     [
       nodeId,

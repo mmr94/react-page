@@ -1,8 +1,9 @@
 import type { BlurAllCellsAction } from '../../actions/cell';
 import { CELL_BLUR_ALL } from '../../actions/cell';
-import type { DisplayAction } from '../../actions/display';
+import type { DisplayAction, SetDeviceAction } from '../../actions/display';
 import {
   DEFAULT_DISPLAY_MODE,
+  DISPLAY_SET_DEVICE,
   DISPLAY_SET_ZOOM,
   SET_DISPLAY_MODE,
   SET_DISPLAY_REFERENCE_NODE_ID,
@@ -13,6 +14,7 @@ export const display = (
   state: Display = {
     mode: DEFAULT_DISPLAY_MODE,
     zoom: 1,
+    device:"DESKTOP"
   },
   action: DisplayAction | BlurAllCellsAction
 ) => {
@@ -21,6 +23,12 @@ export const display = (
       return {
         ...state,
         zoom: action.zoom,
+      };
+    }
+    case DISPLAY_SET_DEVICE: {
+      return {
+        ...state,
+        device: action.device,
       };
     }
     case SET_DISPLAY_REFERENCE_NODE_ID:

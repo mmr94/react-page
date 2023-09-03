@@ -56,7 +56,7 @@ const InsertNew: React.FC<InsertNewProps> = ({ parentCellId }) => {
       }
       style={{
         pointerEvents: 'all',
-        zIndex: isLayoutMode ? 10 : 1,
+        //zIndex: isLayoutMode ? 10 : 1,
         overflow: 'hidden',
         width: '50%', // just so that it leaves some room to click on the parent element
         minWidth: 120,

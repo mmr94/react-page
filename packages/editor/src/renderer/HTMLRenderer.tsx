@@ -22,6 +22,8 @@ import {
   getCellInnerDivStylingProps,
   getCellOuterDivClassName,
 } from '../core/utils/getCellStylingProps';
+import { Devices } from '../core/actions/display';
+import { useDevice, useDeviceByScreen } from '../core/components/hooks';
 
 const rowHasInlineChildren = ({ cells }: { cells: Cell[] }) =>
   Boolean(cells.length === 2 && Boolean(cells[0].inline));
@@ -70,10 +72,12 @@ const HTMLCell: React.FC<
   const { size, hasInlineNeighbour, inline, isDraftI18n, isDraft } = cell;
   const hasChildren = (cell.rows?.length ?? 0) > 0;
 
+  const device:Devices=useDevice()
+
   if (isDraftI18n?.[lang] ?? isDraft) {
     return null;
   }
-  const data = getCellData(cell, lang) ?? {};
+  const data = getCellData(cell, lang,device) ?? {};
   const plugin = cell.plugin
     ? cellPlugins.find((p) => p.id === cell.plugin?.id)
     : null;
@@ -98,6 +102,7 @@ const HTMLCell: React.FC<
       ? normalizeCellSpacing(pluginCellSpacing)
       : cellSpacing;
 
+
     const props = {
       readOnly: true,
       lang: lang,
@@ -108,6 +113,7 @@ const HTMLCell: React.FC<
       focused: false,
       isPreviewMode: false,
       isEditMode: false,
+      device:device,
     };
     const childCellPlugins = getChildCellPlugins(cellPlugins, {
       data,

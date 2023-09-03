@@ -13,6 +13,7 @@ export type Cell = NodeBase & {
   };
 
   dataI18n?: I18nField<Record<string, unknown>>;
+  dataMobI18n?: I18nField<Record<string, unknown>>;
 
   /**
    * with of the cell relative to the parent row in units of 1/12. 12 means full width, 6 means half. and so on.
