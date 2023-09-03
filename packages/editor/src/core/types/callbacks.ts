@@ -11,4 +11,6 @@ export type Callbacks = {
    * is called when the language has changed
    */
   onChangeLang?: null | ((l: string) => void);
+
+  onChangeDevice?: null | ((d: string) => void);
 };

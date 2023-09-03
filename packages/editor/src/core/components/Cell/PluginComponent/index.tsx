@@ -13,6 +13,7 @@ import {
   useOption,
   useIsExclusivlyFocused,
   useDeviceByScreen,
+  useDevice,
 } from '../../hooks';
 import PluginControls from '../PluginControls';
 import PluginMissing from '../PluginMissing';
@@ -28,9 +29,9 @@ const PluginComponent: FC<
   const isPreviewMode = useIsPreviewMode();
   const isEditMode = useIsEditMode();
 
-  const device:Devices=useDeviceByScreen()
+  const device:Devices=useDevice()
 
-  const [data, onChange] = useDebouncedCellData(nodeId);
+  const [data, onChange] = useDebouncedCellData(nodeId,device);
   const pluginId = useCellProps(nodeId, (c) => c?.plugin?.id);
   const plugin = usePluginOfCell(nodeId);
   const focused = useIsExclusivlyFocused(nodeId);
@@ -68,6 +69,7 @@ const PluginComponent: FC<
       isEditMode,
       isPreviewMode,
       remove,
+      device
     ]
   );
 
@@ -76,9 +78,10 @@ const PluginComponent: FC<
   useEffect(()=>{
     if(focused===false && localFocused === true)
     {
-      _timeout.current=setTimeout(()=>setLocalFocused(focused),100)
+      _timeout.current=setTimeout(()=>setLocalFocused(focused),200)
     }else
     {
+      clearTimeout( _timeout.current)
       setLocalFocused(focused)
     }
   },[focused])

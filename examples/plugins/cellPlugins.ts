@@ -54,8 +54,6 @@ const fakeImageUploadService: (url: string) => ImageUploadType =
 // Define which plugins we want to use.
 
 export const cellPlugins = [
-  defaultSlate,
-  customizedSlate,
   spacer,
   imagePlugin({ imageUpload: fakeImageUploadService('/images/react.png') }),
   video,

@@ -34,8 +34,9 @@ const HTMLRow: React.FC<
     className?: string;
     cellPlugins: CellPluginList;
     cellSpacing: CellSpacing;
+    readonly:boolean
   }
-> = React.memo(({ cells = [], className, lang, cellPlugins, cellSpacing }) => (
+> = React.memo(({ cells = [], className, lang, cellPlugins, cellSpacing,readonly }) => (
   <div
     className={classNames('react-page-row', className, {
       'react-page-row-has-floating-children': rowHasInlineChildren({ cells }),
@@ -51,6 +52,7 @@ const HTMLRow: React.FC<
         lang={lang}
         cellPlugins={cellPlugins ?? []}
         cellSpacing={cellSpacing}
+        readonly={readonly}
       />
     ))}
   </div>
@@ -66,13 +68,14 @@ const HTMLCell: React.FC<
     lang?: string;
     cellPlugins: CellPluginList;
     cellSpacing: CellSpacing;
+    readonly:boolean
   }
 > = React.memo((props) => {
-  const { lang = 'default', cellPlugins, cellSpacing, ...cell } = props;
+  const { lang = 'default', cellPlugins, cellSpacing,readonly, ...cell } = props;
   const { size, hasInlineNeighbour, inline, isDraftI18n, isDraft } = cell;
   const hasChildren = (cell.rows?.length ?? 0) > 0;
 
-  const device:Devices=useDevice()
+  const device:Devices=useDeviceByScreen()
 
   if (isDraftI18n?.[lang] ?? isDraft) {
     return null;
@@ -160,6 +163,7 @@ const HTMLCell: React.FC<
                         cellPlugins={childCellPlugins}
                         cellSpacing={normCellSpacing}
                         lang={lang}
+                        readonly={readonly}
                       />
                     ))}
                   </div>
@@ -185,6 +189,7 @@ const HTMLCell: React.FC<
             lang={lang}
             cellPlugins={cellPlugins}
             cellSpacing={cellSpacing}
+            readonly={readonly}
           />
         ))}
       </div>
@@ -200,12 +205,12 @@ const HTMLCell: React.FC<
 
 export type HTMLRendererProps = {
   value: ValueWithLegacy | null;
-
   lang?: string;
+  readonly:boolean
 } & RenderOptions;
 
 export const HTMLRenderer: React.FC<HTMLRendererProps> = React.memo(
-  ({ value, cellPlugins, cellSpacing, lang = 'default' }) => {
+  ({ value, cellPlugins, cellSpacing, lang = 'default',readonly }) => {
     const data = migrateValue(value, { cellPlugins, lang });
     const normCellSpacing = normalizeCellSpacing(cellSpacing);
 
@@ -229,6 +234,7 @@ export const HTMLRenderer: React.FC<HTMLRendererProps> = React.memo(
             cellPlugins={cellPlugins}
             lang={lang}
             cellSpacing={normCellSpacing}
+            readonly={readonly}
             {...row}
           />
         ))}

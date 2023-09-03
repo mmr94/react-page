@@ -353,10 +353,8 @@ export const useCellInnerDivStylingProps = (
  *
  * @param nodeId the id of the cell
  */
-export const useDebouncedCellData = (nodeId: string) => {
+export const useDebouncedCellData = (nodeId: string,device:Devices) => {
   const currentLang = useLang();
-  const device:Devices=useDevice()
-  //console.log("DEVICE",device)
 
   const cellData = useCellData(nodeId,currentLang,device);
   //console.log("cellData",cellData)

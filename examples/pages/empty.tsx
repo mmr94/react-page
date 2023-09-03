@@ -18,19 +18,32 @@ const LANGUAGES = [
 
 export default function Empty() {
   const [value, setValue] = useState<Value | null>(null);
+  const [device, setDevice] = useState<string | null>("DESKTOP");
 
   return (
     <PageLayout>
-      <Editor
-        cellPlugins={cellPlugins}
-        value={value}
-        lang={LANGUAGES[0].lang}
-        onChange={(v)=>{
-          console.log("VALUE EDITOR",v)
-          setValue(v)
-        }}
-        languages={LANGUAGES}
-      />
+      <div style={{paddingLeft:100}}>
+        <div className={device==="MOBILE"?"sm-force":undefined} style={{width:device==="DESKTOP"?"100%":350}}>
+          <Editor
+            cellPlugins={cellPlugins}
+            value={value}
+            lang={LANGUAGES[0].lang}
+            onChange={(v)=>{
+              console.log("VALUE EDITOR",v)
+              setValue(v)
+            }}
+            languages={LANGUAGES}
+
+            onChangeLang={(l)=>console.log("CHANGE LANG",l)}
+            onChangeDevice={(d)=>{
+              if(d==="MOBILE"){
+                //document.querySelector('meta[name="viewport"]')?.setAttribute('content', 'width='+350);
+              }
+              setDevice(d)
+            }}
+          />
+        </div>
+      </div>
     </PageLayout>
   );
 }

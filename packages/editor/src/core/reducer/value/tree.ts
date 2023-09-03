@@ -64,7 +64,7 @@ const cell = (s: Cell, a: CellAction, depth: number): Cell =>
             // If this cell is being updated, set the data
             const reduced = reduce();
 
-            console.log("CELL_UPDATE_DATA",action.device)
+            //console.log("CELL_UPDATE_DATA",action.device)
 
             if(action.device === "DESKTOP")
             {

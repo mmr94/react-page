@@ -2,11 +2,19 @@ import { useCallback } from 'react';
 
 import { useDispatch, useSelector } from '../../reduxConnect';
 import { Devices, setDevice, setZoom } from '../../actions/display';
-import { useOption } from './options';
+import { useOption, useOptions } from './options';
+import { useCallbackOption, useCallbackOptions } from './callbacks';
 
 export const useSetDevice = () => {
+  const onChangeDevice=useCallbackOption("onChangeDevice")
   const dispatch = useDispatch();
-  return useCallback((device: Devices) => dispatch(setDevice(device)), [dispatch]);
+
+  return useCallback((device: Devices) => {
+    if(onChangeDevice){
+      onChangeDevice(device)
+    }
+    dispatch(setDevice(device))
+  }, [dispatch]);
 };
 
 /**

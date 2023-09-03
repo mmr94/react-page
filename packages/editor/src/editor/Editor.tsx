@@ -35,6 +35,7 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
   value = null,
   onChange = null,
   onChangeLang = null,
+  onChangeDevice = null,
 
   lang: passedLang,
   cellPlugins,
@@ -60,6 +61,7 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
   const callbacks: Required<Callbacks> = {
     onChange,
     onChangeLang,
+    onChangeDevice
   };
 
   return renderReadOnly ? (
@@ -68,6 +70,7 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
       cellPlugins={cellPlugins}
       lang={lang}
       cellSpacing={cellSpacing}
+      readonly={true}
     />
   ) : (
     <EditableEditor
@@ -77,6 +80,7 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
           cellPlugins={cellPlugins}
           lang={lang}
           cellSpacing={cellSpacing}
+          readonly={false}
         />
       }
       value={value}

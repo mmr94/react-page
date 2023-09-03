@@ -4,7 +4,7 @@ import { BottomToolbarDrawer } from './Drawer';
 import { BottomToolbarMainBar } from './NodeTools';
 import { ScaleButton } from './ScaleButton';
 import type { BottomToolbarProps } from './types';
-import { useDebouncedCellData, useFocusedNodeId, useIsEditMode, useIsExclusivlyFocused, useIsPreviewMode, useLang, usePluginOfCell, useRemoveCell, useUiTranslator } from '../../core/components/hooks';
+import { useDebouncedCellData, useDevice, useFocusedNodeId, useIsEditMode, useIsExclusivlyFocused, useIsPreviewMode, useLang, usePluginOfCell, useRemoveCell, useUiTranslator } from '../../core/components/hooks';
 import PluginControls from '../../core/components/Cell/PluginControls';
 import { CellPluginComponentProps } from '../../core/types';
 import { Typography } from '@mui/material';
@@ -71,7 +71,8 @@ export const BottomToolbar: FC<PropsWithChildren<BottomToolbarProps>> =
   {
     const lang = useLang();
     const plugin=usePluginOfCell(nodeId)
-    const [data, onChange] = useDebouncedCellData(nodeId);
+    const device=useDevice()
+    const [data, onChange] = useDebouncedCellData(nodeId,device);
     const isPreviewMode = useIsPreviewMode();
     const isEditMode = useIsEditMode();
     const focused = useIsExclusivlyFocused(nodeId);
