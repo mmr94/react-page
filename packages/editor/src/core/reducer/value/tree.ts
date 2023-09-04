@@ -44,13 +44,27 @@ const cell = (s: Cell, a: CellAction, depth: number): Cell =>
           if (action.id === state.id) {
             const reduced = reduce();
             if (action.lang) {
-              return {
-                ...reduced,
-                isDraftI18n: {
-                  ...(reduced.isDraftI18n ?? {}),
-                  [action.lang]: action.isDraft,
-                },
-              };
+              if(action.device === "DESKTOP")
+              {
+                return {
+                  ...reduced,
+                  isDraftI18n: {
+                    ...(reduced.isDraftI18n ?? {}),
+                    [action.lang]: action.isDraft,
+                  },
+                };
+              }
+
+              if(action.device === "MOBILE")
+              {
+                return {
+                  ...reduced,
+                  isDraftMobI18n: {
+                    ...(reduced.isDraftMobI18n ?? {}),
+                    [action.lang]: action.isDraft,
+                  },
+                };
+              }
             } else {
               return {
                 ...reduced,

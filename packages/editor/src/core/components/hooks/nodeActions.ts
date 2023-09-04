@@ -35,8 +35,8 @@ import type { CellPluginOnChangeOptions } from '../../types';
 export const useSetDraft = (id: string) => {
   const dispatch = useDispatch();
   return useCallback(
-    (isDraft: boolean, lang: string) =>
-      dispatch(updateCellIsDraft(id, isDraft, lang)),
+    (isDraft: boolean, lang: string, device:Devices) =>
+      dispatch(updateCellIsDraft(id, isDraft, lang, device)),
     [dispatch, id]
   );
 };

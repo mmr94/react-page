@@ -8,6 +8,7 @@ import {
   useCellHasPlugin,
   useCellProps,
   useCellSpacing,
+  useDevice,
   useIsFocused,
   useIsInsertMode,
   useIsLayoutMode,
@@ -31,14 +32,17 @@ type Props = {
 };
 const Cell: React.FC<Props> = ({ nodeId, measureRef }) => {
   const focused = useIsFocused(nodeId);
+  const device=useDevice()
 
-  const { inline, hasInlineNeighbour, isDraft, isDraftI18n, size } =
+
+  const { inline, hasInlineNeighbour, isDraft, isDraftI18n,isDraftMobI18n, size } =
     useCellProps(nodeId, (node) => {
       return {
         inline: node?.inline,
         hasInlineNeighbour: node?.hasInlineNeighbour,
         isDraft: node?.isDraft,
         isDraftI18n: node?.isDraftI18n,
+        isDraftMobI18n: node?.isDraftMobI18n,
         size: node?.size ?? 12,
       };
     });
@@ -56,7 +60,11 @@ const Cell: React.FC<Props> = ({ nodeId, measureRef }) => {
   const cellSpacing = useCellSpacing();
   const needVerticalPadding = !hasChildren || hasPlugin;
 
-  const isDraftInLang = isDraftI18n?.[lang] ?? isDraft;
+  let isDraftInLang = false;
+  if ((device==="DESKTOP" && isDraftI18n?.[lang] || device==="MOBILE" && isDraftMobI18n?.[lang]) ?? isDraft) {
+    isDraftInLang=true
+  }
+
   const ref = React.useRef<HTMLDivElement>(null);
 
   const setReferenceNodeId = useSetDisplayReferenceNodeId();

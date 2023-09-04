@@ -14,19 +14,22 @@ export interface UpdateCellIsDraftAction extends Action {
   id: string;
   isDraft: boolean;
   lang?: string | null;
+  device:Devices;
   type: typeof CELL_UPDATE_IS_DRAFT;
 }
 
 export const updateCellIsDraft = (
   id: string,
   isDraft = false,
-  lang: string | null = null
+  lang: string | null = null,
+  device:Devices
 ): UpdateCellIsDraftAction => ({
   type: CELL_UPDATE_IS_DRAFT,
   ts: new Date(),
   id,
   isDraft,
   lang,
+  device,
 });
 
 export interface UpdateCellDataAction extends Action {

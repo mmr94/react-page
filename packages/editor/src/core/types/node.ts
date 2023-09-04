@@ -24,6 +24,7 @@ export type Cell = NodeBase & {
 
   isDraft?: boolean;
   isDraftI18n?: I18nField<boolean>;
+  isDraftMobI18n?: I18nField<boolean>;
 
   hasInlineNeighbour?: string;
   isRoot?: boolean;

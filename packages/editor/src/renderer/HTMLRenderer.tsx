@@ -66,18 +66,18 @@ const HTMLCell: React.FC<
     lang?: string;
     cellPlugins: CellPluginList;
     cellSpacing: CellSpacing;
-
   }
 > = React.memo((props) => {
   const { lang = 'default', cellPlugins, cellSpacing, ...cell } = props;
-  const { size, hasInlineNeighbour, inline, isDraftI18n, isDraft } = cell;
+  const { size, hasInlineNeighbour, inline, isDraftI18n,isDraftMobI18n, isDraft } = cell;
   const hasChildren = (cell.rows?.length ?? 0) > 0;
+  const device=useDeviceByScreen()
 
-  if (isDraftI18n?.[lang] ?? isDraft) {
+  console.log("Cell",device)
+
+  if ((device==="DESKTOP" && isDraftI18n?.[lang] || device==="MOBILE" && isDraftMobI18n?.[lang]) ?? isDraft) {
     return null;
   }
-
-  const device=useDeviceByScreen()
 
   const data = getCellData(cell, lang, device) ?? {};
   const plugin = cell.plugin

@@ -4,6 +4,7 @@ import NonVisibleIcon from '@mui/icons-material/VisibilityOff';
 import React from 'react';
 import {
   useCellProps,
+  useDevice,
   useLang,
   useSetDraft,
   useUiTranslator,
@@ -11,9 +12,11 @@ import {
 
 const DraftSwitch = ({ nodeId, lang }: { nodeId: string; lang?: string }) => {
   const { t } = useUiTranslator();
+  const device=useDevice()
+
   const cell = useCellProps(nodeId, (c) => ({
-    isDraft: c?.isDraft,
     isDraftI18n: c?.isDraftI18n,
+    isDraftMobI18n:c?.isDraftMobI18n
   }));
   const setDraft = useSetDraft(nodeId);
   const currentLang = useLang();
@@ -22,7 +25,15 @@ const DraftSwitch = ({ nodeId, lang }: { nodeId: string; lang?: string }) => {
   }
   const theLang = lang ?? currentLang;
   const hasI18n = Boolean(cell.isDraftI18n);
-  const isDraft = cell?.isDraftI18n?.[theLang] ?? cell?.isDraft; // fallback to legacy
+
+  const isDraftDesktop = cell?.isDraftI18n?.[theLang];
+  const isDraftMobile= cell?.isDraftMobI18n?.[theLang]
+
+  var isDraft=isDraftDesktop
+  if(device==="MOBILE" && isDraftMobile !== undefined){
+    isDraft=isDraftMobile
+  }
+
   const title = t(isDraft ? 'Content is hidden' : 'Content is visible');
   return cell ? (
     <Tooltip title={title + (hasI18n ? ' in ' + theLang : '')}>
@@ -34,7 +45,7 @@ const DraftSwitch = ({ nodeId, lang }: { nodeId: string; lang?: string }) => {
             color="primary"
             checked={!isDraft}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setDraft(!e.target.checked, theLang);
+              setDraft(!e.target.checked, theLang, device);
             }}
           />
         }
