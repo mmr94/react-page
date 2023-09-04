@@ -9,7 +9,7 @@ export const getCellData = (
 ) => {
   //console.log("DATA",device,cell?.dataI18n,cell?.dataMobI18n)
 
-  var dataI18n = _.merge({}, cell?.dataMobI18n,cell?.dataI18n);
+  var dataI18n = cell?.dataI18n
   if(device==="MOBILE"){
     dataI18n = _.merge({}, cell?.dataI18n,cell?.dataMobI18n);
   }

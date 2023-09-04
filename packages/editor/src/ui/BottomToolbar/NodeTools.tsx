@@ -113,7 +113,7 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
 
           </Grid>
 
-          {divider(true)}
+          {divider(false)}
           </>
         ) : null}
 
@@ -141,7 +141,7 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
           </Grid>
 
         </Grid>
-        {divider(false)}
+        {divider(true)}
 
       </div>
     );
