@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import React, { Fragment, useMemo } from 'react';
+import React, { Fragment, useEffect, useMemo } from 'react';
 import { BottomToolbarDrawer } from './Drawer';
 import { BottomToolbarMainBar } from './NodeTools';
 import { ScaleButton } from './ScaleButton';
@@ -24,7 +24,15 @@ export const BottomToolbar: FC<PropsWithChildren<BottomToolbarProps>> =
     }) => {
       const [scale, setScale] = React.useState(1);
       const nodeId=useFocusedNodeId()
+      const [focusedLocal, setFocusedLocal] = React.useState(nodeId);
+
       const {t}=useUiTranslator()
+
+      useEffect(()=>{
+        if(nodeId && nodeId !== focusedLocal){
+          setFocusedLocal(nodeId)
+        }
+      },[nodeId])
 
 
       return (
@@ -35,11 +43,11 @@ export const BottomToolbar: FC<PropsWithChildren<BottomToolbarProps>> =
           scale={scale}
           style={style}
         >
-          {nodeId && (
-            <BottomToolbarBody nodeId={nodeId}/>
+          {focusedLocal && (
+            <BottomToolbarBody nodeId={focusedLocal}/>
           )}
 
-          {!nodeId &&(
+          {!focusedLocal &&(
             <div style={{height:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
               <Typography variant='subtitle1' color="GrayText">
                 {t("Selectionnez un plugin")}
