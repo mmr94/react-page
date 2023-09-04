@@ -48,7 +48,7 @@ export const BottomToolbarDrawer: FC<
         anchor={"left"}
         PaperProps={{
           style: {
-            width: "350px",
+            width: "370px",
           },
         }}
       >
@@ -59,7 +59,7 @@ export const BottomToolbarDrawer: FC<
             //borderRadius: '4px 4px 0 0',
             //backgroundColor: dark ? darkBlack : bright,
             padding: '12px 12px',
-            width:"inherit",
+            width:"350px",
 
             ...(isSmall
               ? {

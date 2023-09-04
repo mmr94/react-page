@@ -61,8 +61,8 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
             </Grid>
           ) : null}
 
-          <Grid item={true} onClick={() => focus(true)} style={{cursor: 'pointer'}}>
-            <Typography variant="subtitle1">{t(title)}</Typography>
+          <Grid item={true} onClick={() => focus(true)} style={{cursor: 'pointer',width:160}}>
+            <Typography variant="subtitle1" style={{overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>{t(title)}</Typography>
           </Grid>
 
 
