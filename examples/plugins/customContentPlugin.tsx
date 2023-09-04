@@ -36,20 +36,25 @@ const customContentPlugin: CellPlugin<{
     padding: number;
   };
 }> = {
-  Renderer: ({ data }) => (
-    <div
-      style={{
-        backgroundColor: getBackgroundColor(data?.style?.pallete),
-        color: getTextColor(data?.style?.pallete),
-        padding: data?.style?.padding,
-      }}
-    >
-      <h3>{data.title}</h3>
-      <p>Firstname: {data.firstName}</p>
-      <p>Lastname: {data.lastName}</p>
-      <p>Age: {data.age}</p>
+  Renderer: (props) => {
+    console.log("Control Props",props)
+    const { data }= props
+    return(
+      <div
+        style={{
+          backgroundColor: getBackgroundColor(data?.style?.pallete),
+          color: getTextColor(data?.style?.pallete),
+          padding: data?.style?.padding,
+        }}
+      >
+        <h3>{data.title}</h3>
+        <p>Firstname: {data.firstName}</p>
+        <p>Lastname: {data.lastName}</p>
+        <p>Age: {data.age}</p>
     </div>
-  ),
+    )
+
+  },
   id: 'custom-content-plugin',
   title: 'Custom content plugin',
   description: 'Some custom content plugin with multiple controls',

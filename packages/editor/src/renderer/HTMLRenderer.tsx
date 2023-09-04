@@ -73,8 +73,6 @@ const HTMLCell: React.FC<
   const hasChildren = (cell.rows?.length ?? 0) > 0;
   const device=useDeviceByScreen()
 
-  console.log("Cell",device)
-
   if ((device==="DESKTOP" && isDraftI18n?.[lang] || device==="MOBILE" && isDraftMobI18n?.[lang]) ?? isDraft) {
     return null;
   }

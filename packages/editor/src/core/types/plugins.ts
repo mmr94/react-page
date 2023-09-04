@@ -69,7 +69,7 @@ export type CellPluginComponentProps<DataT extends DataTType = DataTAny> = {
    */
   isEditMode: boolean;
 
-  device?:Devices;
+  device:Devices;
 };
 
 export type CellPluginMissingProps = Omit<

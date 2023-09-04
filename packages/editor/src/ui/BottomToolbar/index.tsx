@@ -90,6 +90,7 @@ export const BottomToolbar: FC<PropsWithChildren<BottomToolbarProps>> =
         isEditMode,
         isPreviewMode,
         remove,
+        device,
       }),
       [
         nodeId,
@@ -102,6 +103,7 @@ export const BottomToolbar: FC<PropsWithChildren<BottomToolbarProps>> =
         isEditMode,
         isPreviewMode,
         remove,
+        device,
       ]
     );
 
