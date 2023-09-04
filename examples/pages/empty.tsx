@@ -18,11 +18,12 @@ const LANGUAGES = [
 
 export default function Empty() {
   const [value, setValue] = useState<Value | null>(null);
-  const [device, setDevice] = useState<string | null>("DESKTOP");
+  const [device, setDevice] = useState<string>("DESKTOP");
+  const [readOnly, setReadOnly] = useState<boolean>(false);
 
   return (
-    <PageLayout>
-      <div style={{paddingLeft:100}}>
+    <PageLayout onChangeReadOnly={setReadOnly}>
+      <div style={{paddingLeft:readOnly?0:100}}>
         <div className={device==="MOBILE"?"sm-force":undefined} style={{width:device==="DESKTOP"?"100%":350}}>
           <Editor
             cellPlugins={cellPlugins}
@@ -33,7 +34,7 @@ export default function Empty() {
               setValue(v)
             }}
             languages={LANGUAGES}
-
+            readOnly={readOnly}
             onChangeLang={(l)=>console.log("CHANGE LANG",l)}
             onChangeDevice={(d)=>{
               if(d==="MOBILE"){

@@ -28,7 +28,7 @@ export const I18nTools: React.FC<{
         <IconButton
           onClick={() => setShowI18nDialog(true)}
           aria-label="i18n"
-          color="secondary"
+          color="primary"
         >
           <Translate />
         </IconButton>

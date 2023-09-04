@@ -8,6 +8,7 @@ import type {
   ValueWithLegacy,
 } from '../core/types';
 import { HTMLRenderer } from '../renderer/HTMLRenderer';
+import { useDevice, useDeviceByScreen } from '../core/components/hooks';
 
 const EditableEditor = lazyLoad(() => import('./EditableEditor'));
 
@@ -70,18 +71,16 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
       cellPlugins={cellPlugins}
       lang={lang}
       cellSpacing={cellSpacing}
-      readonly={true}
     />
   ) : (
     <EditableEditor
       fallback={
-        <HTMLRenderer
-          value={value}
-          cellPlugins={cellPlugins}
-          lang={lang}
-          cellSpacing={cellSpacing}
-          readonly={false}
-        />
+          <HTMLRenderer
+            value={value}
+            cellPlugins={cellPlugins}
+            lang={lang}
+            cellSpacing={cellSpacing}
+          />
       }
       value={value}
       lang={lang}

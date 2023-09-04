@@ -9,7 +9,7 @@ export const DuplicateButton: React.FC<{ nodeId: string }> = React.memo(
     const { t } = useUiTranslator();
     return (
       <Tooltip title={t('Duplicate Plugin') ?? ''}>
-        <IconButton onClick={duplicateCell} aria-label="delete" color="default">
+        <IconButton onClick={duplicateCell} aria-label="delete" color="default" style={{border:"1px solid rgba(0, 0, 0, 0.54)"}}>
           <Icon />
         </IconButton>
       </Tooltip>

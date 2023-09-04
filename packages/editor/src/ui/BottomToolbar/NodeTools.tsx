@@ -1,10 +1,12 @@
-import { Avatar, Grid, Typography,IconButton,Tooltip,Divider } from '@mui/material';
+import { Avatar, Grid, Typography,IconButton,Tooltip,Divider, Button } from '@mui/material';
 import React from 'react';
 import {
+  useDevice,
   useFocusCell,
   useOption,
   usePluginOfCell,
   useRemoveCell,
+  useSetDevice,
   useUiTranslator,
 } from '../../core/components/hooks';
 import MoveActions from './MoveActions';
@@ -14,6 +16,8 @@ import { Delete } from '@mui/icons-material';
 import { SelectParentButton } from '../SelectParentButton';
 import { I18nTools } from '../I18nTools';
 import DraftSwitch from '../DraftSwitch';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import DesktopMacOutlinedIcon from '@mui/icons-material/DesktopMacOutlined';
 
 export type BottomToolbarMainBarProps = {
   nodeId: string;
@@ -36,6 +40,9 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
     const focus = useFocusCell(nodeId);
     const showMoveButtons = useOption('showMoveButtonsInBottomToolbar');
     const removeCell = useRemoveCell(nodeId);
+
+    const device=useDevice()
+    const setDevice=useSetDevice()
 
     return (
       <div>
@@ -60,16 +67,17 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
 
 
           <Grid item={true} style={{ marginLeft: 'auto' }}>
-          <DuplicateButton nodeId={nodeId} />
+            <DuplicateButton nodeId={nodeId} />
 
             <Tooltip title={t('Remove Plugin') ?? ''}>
-              <IconButton
-                onClick={() => removeCell()}
-                aria-label="delete"
-                color="secondary"
-              >
-                <Delete />
-              </IconButton>
+                <IconButton
+                  onClick={() => removeCell()}
+                  aria-label="delete"
+                  color="error"
+                  style={{border:"1px solid #d32f2f",marginLeft:10}}
+                >
+                  <Delete />
+                </IconButton>
               </Tooltip>
           </Grid>
 
@@ -108,6 +116,33 @@ export const BottomToolbarMainBar: React.FC<BottomToolbarMainBarProps> =
           {divider(true)}
           </>
         ) : null}
+
+        <Grid container={true} direction="row" alignItems="center" justifyContent="space-around">
+
+          <Grid item={true}>
+            <Button
+                variant={device === "DESKTOP"?"contained":"outlined"}
+                startIcon={<DesktopMacOutlinedIcon/>}
+                onClick={()=>setDevice("DESKTOP")}
+            >
+              Desktop
+            </Button>
+          </Grid>
+
+
+          <Grid item={true}>
+          <Button
+                variant={device === "MOBILE"?"contained":"outlined"}
+                startIcon={<SmartphoneIcon/>}
+                onClick={()=>setDevice("MOBILE")}
+            >
+              Mobile
+            </Button>
+          </Grid>
+
+        </Grid>
+        {divider(false)}
+
       </div>
     );
   });

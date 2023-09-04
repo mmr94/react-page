@@ -12,10 +12,11 @@ import { VERSION } from '@kehila/react-page-editor';
 import type { FC, PropsWithChildren } from 'react';
 import * as React from 'react';
 import Navigation from './Navigation';
+import { Switch } from '@mui/material';
 
 const drawerWidth = 240;
 
-const PageLayout: FC<PropsWithChildren> = ({ children }) => {
+const PageLayout: FC<any> = ({ children,onChangeReadOnly }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -53,6 +54,13 @@ const PageLayout: FC<PropsWithChildren> = ({ children }) => {
           <Typography variant="h6" noWrap component="div">
             React Page {VERSION}
           </Typography>
+
+          <Switch color='warning' onChange={(e,checked)=>{
+            if(onChangeReadOnly){
+              onChangeReadOnly(checked)
+            }
+          }}/>
+
           <IconButton
             href="https://github.com/react-page/react-page"
             target="_blank"
