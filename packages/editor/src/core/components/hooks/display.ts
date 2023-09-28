@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from '../../reduxConnect';
 import { Devices, setDevice, setZoom } from '../../actions/display';
@@ -28,13 +28,16 @@ export const useDevice = () => {
  * @returns the current device by screen
  */
 export const useDeviceByScreen = ():Devices => {
+
   let device:Devices='MOBILE'
   let screenWidth:number=window.innerWidth
-  //console.log("screenWidth",screenWidth)
 
   if(screenWidth>992){
     device="DESKTOP"
   }
+
+  console.log("useDeviceByScreen",device,screenWidth)
+
   return device
 };
 

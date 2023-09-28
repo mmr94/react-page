@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import lazyLoad from '../core/helper/lazyLoad';
 import type {
   Callbacks,
@@ -45,10 +45,16 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
   ...options
 }) => {
   // mount the component always in readonly, to avoid problems with SSR
+  const [loadingWindow, setLoadingWindow] = useState(true);
   const [renderReadOnly, setRenderReadOnly] = useState(true);
+
   useEffect(() => {
     setRenderReadOnly(readOnly);
   }, [readOnly]);
+
+  useEffect(()=>{
+    setLoadingWindow(false)
+  },[])
 
   const lang = passedLang ?? options.languages?.[0].lang ?? 'default';
 
@@ -64,6 +70,10 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
     onChangeLang,
     onChangeDevice
   };
+
+  if(loadingWindow){
+    return null
+  }
 
   return renderReadOnly ? (
     <HTMLRenderer
